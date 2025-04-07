@@ -1,0 +1,61 @@
+
+.article {
+  margin-top: -2rem;
+  height: 100vh;
+  background-image: linear-gradient(to top, grey, rgb(3, 29, 155));
+}
+
+.article-box {
+  display: flex;
+  align-items: stretch; /* Ensure all cards stretch to the same height */
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5rem;
+  transition: 0.5s ease-in-out;
+  margin-top: 100px;
+}
+
+.article-card {
+  max-width: 460px;
+  border: 1px solid pink;
+  padding: 3rem;
+  color:white; 
+  overflow: hidden; /* Prevent content overflow */
+}
+
+.article-card img {
+  padding-bottom: 10rem;
+  width: 400px;
+  height: 350px;
+}
+
+.article-card h3 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-top: -8rem;
+}
+
+.article-card p{
+  margin-top: 1rem;
+  font-size: 1.8rem;
+  text-align: left;
+  white-space: normal; /* Allow text wrapping */
+  word-wrap: break-word; /* Break long words if needed */
+}
+
+.article-card button{
+  margin-left: 15rem;
+  padding: 0.5rem 3.5rem;
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+
+.article-card button:hover {
+  background-color: #0056b3;
+}
+

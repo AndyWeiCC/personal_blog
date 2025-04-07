@@ -1,0 +1,26 @@
+.contact-form form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  margin: 5rem 0;
+  text-align: center;
+}
+
+.contact-form h2{
+  color: white;
+  text-align: center;
+  margin-top: 20rem;
+}
+
+.contact-form form .input-box input,
+.contact-form form textarea {
+  background-color: black;
+  width: 100%; 
+  padding: 2.5rem;
+  font-size: 1.8rem;
+  color: grey;
+  border-radius: 2rem;
+  border: 2px solid orange;
+  margin: 1.5rem 0;
+}

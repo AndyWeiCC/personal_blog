@@ -1,0 +1,111 @@
+.navHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  padding: 4rem 2%;
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+
+.logo {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+
+span {
+  background: linear-gradient(
+    270deg,
+    rgb(3, 29, 155),
+    rgb(170, 76, 143)
+  );
+  color: transparent;
+  background-clip: text;
+}
+
+.navbar a{
+  font-size: 1.8rem;
+  color: var(--text-color);
+  margin-left: 4rem;
+  font-weight: 500;
+  transition: 0.3s ease-in-out;
+
+}
+
+.navbar a:hover {
+  color: var(--secondary-color);
+  border-bottom: 3px solid var(--main-color);
+}
+
+.menuIcon {
+  color: white;
+  font-size: 2.5rem;
+  display: none;
+}
+
+.gradient-btn {
+  font-size: 1.8rem;
+  padding: 1rem 2rem; 
+  border-radius: 3rem;
+  background: linear-gradient(
+    270deg,
+    rgb(3, 29, 155),
+    rgb(170, 76, 143)
+  );
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: 0.3s ease-in-out; 
+  color: white;
+  border: none; 
+  text-wrap: nowrap;
+}
+
+.gradient-btn:hover {
+  transform: scale(1.05);
+}
+
+@media(max-width: 1000px) {
+  .menuIcon {
+    color: white;
+    display: block;
+  }
+  .navbar {
+    position: absolute;
+    top: 100%; 
+    right: 0;
+    width: 50%;
+    padding:1rem 3rem;
+    background-color: rgba(0,0,0,0.8);
+    border-bottom-left-radius: 2rem;
+    border-left: 2px solid orange;
+    border-bottom: 2px solid orange;
+    display: none;
+  }
+  .navbar a {
+    display: block;
+    font-size: 2.5rem;
+    margin: 3rem 0;
+  }
+  .navbar .active {
+    display: block;
+  }
+
+  .gradient-btn {
+    display: none;
+  }
+  
+}

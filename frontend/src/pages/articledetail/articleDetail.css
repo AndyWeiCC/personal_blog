@@ -1,0 +1,51 @@
+
+/* 1. base structure and spacing. */
+
+.article-detail {
+  max-width: 1000px;
+  margin: 0 auto; /* Center align */
+  padding: 20px;
+  line-height: 2.6;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+/* title and thumbnail styling */
+
+.article-detail-thumbnail {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.article-detail-title {
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+/* content block and paragraph styling */
+
+.article-detail-content {
+  font-size: 1.5em;
+}
+
+.article-detail-content p {
+  margin: 15px 0;
+  text-align: justify; /* Smooth text alignment for a clean look */
+  color: white;
+}
+
+
+/* embedded image styling */
+.article-detail-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 8px;
+  margin: 20px auto; /* Space images evenly between paragraphs */
+  display: block; /* Center the image */
+}

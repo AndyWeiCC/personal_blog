@@ -1,0 +1,125 @@
+body {
+  background-color: black;
+}
+
+section {
+  min-height: 100vh;
+  padding: 10rem 10%;
+}
+
+.home-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15rem;
+}
+
+.left-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  color: white;
+}
+
+.left-container h1 {
+  font-size: 8rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  line-height: 1;
+}
+
+.left-container h3 {
+  margin: 1rem 0;
+  font-size: 4rem;
+}
+
+.left-container p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.8;
+}
+
+.social-icons a{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  padding: 1rem;
+  background: transparent;
+  color: yellow;
+  border: 2px solid var(--main-color);
+  border-radius: 50%;
+  margin: 3rem 1rem;
+  transition: 0.3s ease-in-out;
+}
+
+.social-icons a:hover{
+  color: white;
+  background: orange;
+  transform: scale(1.2) translateY(-5px);
+  box-shadow: 0 0 25px var(--main-color);
+}
+
+
+.btn-group {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 3rem;
+  background-color: var(--secondary-color);
+  box-shadow: 0 0 25px var(--main-color);
+  border-radius: 3rem;
+  font-size: 1.8rem;
+  border: 2px solid transparent;
+  font-weight: 600;
+  transition: 0.3 ease-in-out;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px var(--secondary-color),
+              0 0 50px var(--secondary-color);
+}
+
+.home-img img {
+  width: 42vw;
+  border-radius: 50%;
+  box-shadow: 0 0 25px var(--main-color);
+  transition: 0.4s ease-in-out;
+}
+
+
+.home-img img:hover {
+  box-shadow: 0 0 25px var(--main-color),
+              0 0 50px var(--main-color),
+              0 0 100px var(--main-color);
+}
+
+
+@media(max-width: 1000px) {
+  .home-container {
+    flex-direction: column-reverse;
+    margin: 5rem 0;
+    gap: 5rem;
+  }
+  .left-container {
+    align-items: center;
+    text-align: center;
+  }
+  .home-img img {
+    width: 56vw;
+  }
+  
+}
+
+
+
+
+
+
+
+

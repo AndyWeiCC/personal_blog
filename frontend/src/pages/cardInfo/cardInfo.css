@@ -1,0 +1,46 @@
+.card-info h1 {
+  color: white;
+  text-align: center;
+  margin-top: 120px;
+  font-size: 2.5rem; /* Increased font size */
+}
+
+.video-list {
+  display: flex;
+  align-items: stretch; /* Ensure all cards stretch to the same height */
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 3rem;
+  transition: 0.5s ease-in-out;
+  margin-top: 50px;
+}
+
+.video-item {
+  max-width: 583px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  border: 2px solid white;
+  padding: 1rem;
+  transition: transform 0.2s ease;
+  color: rgb(26, 22, 22);
+  overflow: hidden; /* Prevent content overflow */
+}
+
+.video-item:hover {
+  transform: translateY(-4px);
+}
+.video-item h3 {
+  color: white;
+  font-size: 2.5rem;
+  text-align: left;
+}
+
+.video-item p {
+  max-width: 80%;
+  font-size: 1.8rem;
+  text-align: left;
+  white-space: normal; /* Allow text wrapping */
+  overflow-wrap: break-word; /* Break long words if needed */
+  color: grey;
+}
