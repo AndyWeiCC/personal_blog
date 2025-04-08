@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./article.css";
 import { useTranslation } from 'react-i18next';
+import Footer from '../../components/footer/Footer';
 
 const Article = () => {
   const [articles, setArticles] = useState([]);
@@ -28,18 +29,29 @@ const Article = () => {
   }
 
   return (
-    <div className="article">
-      <div className="article-box">
-        {articles.map((article) => (
-          <div key={article._id} className="article-card">
-            <img src={article.translation.thumbnail} alt={article.translation.title} />
-            <h3>{article.translation.title}</h3>
-            <p>{article.translation.description}</p>
-            <button onClick={() => handleClick(article._id)}>Click it</button>
-          </div>
-        ))}
+    <>
+      <div className="article">
+        <div className="article-box">
+          {articles.map((article) => (
+            <div 
+              key={article._id} 
+              className="article-card" 
+              onClick={() => handleClick(article._id)}
+              style={{ cursor: 'pointer' }} // Add a pointer cursor for better UX
+            >
+              <div className='article-image'>
+                <img src={article.translation.thumbnail} alt={article.translation.title} />
+              </div>
+              <div className='article-title'>
+                <h3>{article.translation.title}</h3>
+              </div>
+              <p>{article.translation.description}</p>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 }
 

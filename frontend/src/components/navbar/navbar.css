@@ -37,13 +37,20 @@ span {
   background-clip: text;
 }
 
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  margin-left: 35rem; /* Push to the right */
+}
+
 .navbar a{
   font-size: 1.8rem;
   color: var(--text-color);
-  margin-left: 4rem;
+  margin-left: 8rem;
   font-weight: 500;
   transition: 0.3s ease-in-out;
-
 }
 
 .navbar a:hover {
@@ -51,61 +58,81 @@ span {
   border-bottom: 3px solid var(--main-color);
 }
 
-.menuIcon {
+.menuIconContainer {
   color: white;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   display: none;
 }
 
-.gradient-btn {
-  font-size: 1.8rem;
-  padding: 1rem 2rem; 
-  border-radius: 3rem;
-  background: linear-gradient(
-    270deg,
-    rgb(3, 29, 155),
-    rgb(170, 76, 143)
-  );
-  cursor: pointer;
-  letter-spacing: 1px;
-  transition: 0.3s ease-in-out; 
-  color: white;
-  border: none; 
-  text-wrap: nowrap;
-}
-
-.gradient-btn:hover {
-  transform: scale(1.05);
-}
-
-@media(max-width: 1000px) {
-  .menuIcon {
-    color: white;
-    display: block;
-  }
-  .navbar {
-    position: absolute;
-    top: 100%; 
-    right: 0;
-    width: 50%;
-    padding:1rem 3rem;
-    background-color: rgba(0,0,0,0.8);
-    border-bottom-left-radius: 2rem;
-    border-left: 2px solid orange;
-    border-bottom: 2px solid orange;
-    display: none;
-  }
-  .navbar a {
-    display: block;
+@media(max-width: 1200px) {
+.logo {
     font-size: 2.5rem;
-    margin: 3rem 0;
+    order:2;
+    margin-left: auto;
   }
-  .navbar .active {
+  .menuIconContainer {
+    position: relative;
     display: block;
+    margin-left: auto; /* Push to the right */
+    order: 2; /* Ensure it appears after other elements */
+    z-index: 1001; /* Above the dropdown */
+  }
+  .menuIcon {
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 10px;
+    transition: transform 0.3s ease;
+  }
+  .menuIcon:hover {
+    transform: scale(1.1);
   }
 
-  .gradient-btn {
+  .dropdownMenu {
+    position: fixed;
+    top: 160px; /* Adjusted to display under navHeader */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+    animation: fadeIn 0.3s ease forwards;
+  }
+
+  .dropdownMenu a {
+    background-color: white;
+    padding: 15px 0;
+    font-size: 1.5rem;
+    color: #333;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .dropdownMenu a:hover {
+    color: #635bff;
+    background-color: black;
+  }
+
+  .navbar {
     display: none;
   }
+
   
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

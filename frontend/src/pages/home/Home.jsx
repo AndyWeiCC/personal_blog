@@ -3,10 +3,15 @@ import "./home.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faInstagram, faWeixin } from '@fortawesome/free-brands-svg-icons';
 import { useTranslation, Trans } from 'react-i18next';
+import Footer from "../../components/footer/Footer";
 
 
 const Home = () => {
   const { t } = useTranslation();
+
+  const handleClick = () => {
+    window.location.href = "/about";
+  }
   return (
     <>
       <section className="home-container">
@@ -43,13 +48,7 @@ const Home = () => {
           </div>
 
           <div className="btn-group">
-            <a href="#" className="btn">
-              Hire
-            </a>
-
-            <a href="#" className="btn">
-              Contact
-            </a>
+            <button className="gradient-btn" onClick={handleClick}>{t('gogo')}</button>
           </div>
 
         </div>
@@ -59,6 +58,7 @@ const Home = () => {
         </div>
 
       </section>
+      <Footer />
     </>
   )
 }

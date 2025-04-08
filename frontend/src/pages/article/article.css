@@ -1,7 +1,11 @@
 
 .article {
-  margin-top: -2rem;
-  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  height: 100%;
+  min-height: calc(100vh - 80px); /*important!!!!!!!!!!!!!!!!!!!! */
   background-image: linear-gradient(to top, grey, rgb(3, 29, 155));
 }
 
@@ -17,45 +21,75 @@
 
 .article-card {
   max-width: 460px;
-  border: 1px solid pink;
   padding: 3rem;
   color:white; 
   overflow: hidden; /* Prevent content overflow */
+  position: relative;
+  cursor: pointer; /* Make the entire card clickable */
 }
 
-.article-card img {
-  padding-bottom: 10rem;
+.article-title h3 {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1.9rem;
+  width: 60%;
+  text-align: left;
+  z-index: 2;
+  margin-top: -1rem;
+  font-weight: 900;
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+
+.article-card:hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -5px;
+  right: -5px;
+  bottom: 0;
+  background-color: #0067b8; /* Microsoft blue color */
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+
+.article-card:hover .article-title h3 {
+  background-color: blueviolet;
+  color: white;
+
+}
+
+.article-image img {
+  position: relative;
+  padding-bottom: 2rem;
   width: 400px;
-  height: 350px;
+  height: 280px;
 }
 
-.article-card h3 {
-  font-size: 2.5rem;
-  text-align: center;
-  margin-top: -8rem;
+.article-title h3 {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1.9rem;
+  width: 60%;
+  text-align: left;
+  z-index: 2;
+  margin-top: -1rem;
+  font-weight: 900;
 }
 
-.article-card p{
-  margin-top: 1rem;
+.article-card p {
+  position: relative;
+  margin-top: 5rem;
   font-size: 1.8rem;
   text-align: left;
   white-space: normal; /* Allow text wrapping */
   word-wrap: break-word; /* Break long words if needed */
-}
-
-.article-card button{
-  margin-left: 15rem;
-  padding: 0.5rem 3.5rem;
-  background-color: #007bff;
-  border: none;
-  border-radius: 8px;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-
-.article-card button:hover {
-  background-color: #0056b3;
 }
 

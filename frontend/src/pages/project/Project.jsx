@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './project.css';
+import Footer from '../../components/footer/Footer';
+import { useTranslation } from 'react-i18next';
 
 const Project = () => {
   const images = [
@@ -14,6 +16,8 @@ const Project = () => {
     { id: 8, url: 'https://images.ctfassets.net/xz1dnu24egyd/72URY4Vg59wKsYMpTqrMel/194347274767abce3c04be7be72a75a3/AWS-Logo__1_.png', topic: 'aws' },
     { id: 9, url: 'https://miro.medium.com/v2/resize:fit:1200/1*1hpObQWyoa8_Iu2op0RKZA.png', topic: 'git' },
   ];
+
+  const { t } = useTranslation();
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const visibleCount = 4;
@@ -45,26 +49,29 @@ const Project = () => {
   /////////
 
   return (
-    <div className="project-container">
-      <h1>Topics</h1>
-      <p>These are topics I'll cover.</p>
-      <div className="carousel">
-        <button onClick={handlePrev} className="carousel-button left">❮</button>
-        <ul className="persons">
-          {visibleImages.map((image) => (
-            <li key={image.id} className="carousel-item">
-              <img
-                src={image.url}
-                alt={`Slide ${image.id}`}
-                className="carousel-image"
-                onClick={() => handleImageClick(image.id, image.topic)}
-              />
-            </li>
-          ))}
-        </ul>
-        <button onClick={handleNext} className="carousel-button right">❯</button>
+    <>
+      <div className="project-container">
+        <h1>{t('topics')}</h1>
+        <p>{t('topicsText')}</p>
+        <div className="carousel">
+          <button onClick={handlePrev} className="carousel-button left">❮</button>
+          <ul className="persons">
+            {visibleImages.map((image) => (
+              <li key={image.id} className="carousel-item">
+                <img
+                  src={image.url}
+                  alt={`Slide ${image.id}`}
+                  className="carousel-image"
+                  onClick={() => handleImageClick(image.id, image.topic)}
+                />
+              </li>
+            ))}
+          </ul>
+          <button onClick={handleNext} className="carousel-button right">❯</button>
+        </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 

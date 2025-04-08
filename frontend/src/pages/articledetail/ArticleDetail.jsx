@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import "./articleDetail.css";
 import { useTranslation } from 'react-i18next';
+import Footer from '../../components/footer/Footer';
 
 const ArticleDetail = () => {
 
@@ -49,13 +50,16 @@ const ArticleDetail = () => {
   }
 
   return (
-    <div className='article-detail'>
-      <img className='article-detail-thumbnail' src={article.thumbnail} />
-      <h1  className='article-detail-title'>{article.title}</h1>
-      <div className='article-detail-content'>
-        {renderContentWithImages(article.content, article.images)}
+    <>
+      <div className='article-detail'>
+        <img className='article-detail-thumbnail' src={article.thumbnail} />
+        <h1  className='article-detail-title'>{article.title}</h1>
+        <div className='article-detail-content'>
+          {renderContentWithImages(article.content, article.images)}
+        </div>
       </div>
-    </div>
+      <Footer />
+    </>
   )
 }
 

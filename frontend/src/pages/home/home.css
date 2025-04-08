@@ -1,10 +1,11 @@
 body {
   background-color: black;
+  z-index: 111;
 }
 
 section {
   min-height: 100vh;
-  padding: 10rem 10%;
+  padding: 0rem 10%;
 }
 
 .home-container {
@@ -50,7 +51,7 @@ section {
   color: yellow;
   border: 2px solid var(--main-color);
   border-radius: 50%;
-  margin: 3rem 1rem;
+  margin: 2rem 1rem;
   transition: 0.3s ease-in-out;
 }
 
@@ -64,8 +65,32 @@ section {
 
 .btn-group {
   display: flex;
+  align-items: center;
   gap: 1.5rem;
 }
+
+.gradient-btn {
+  margin-top: 2rem;
+  font-size: 1.8rem;
+  padding: 1rem 4rem; 
+  border-radius: 3rem;
+  background: linear-gradient(
+    270deg,
+    rgb(3, 29, 155),
+    rgb(170, 76, 143)
+  );
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: 0.3s ease-in-out; 
+  color: white;
+  border: none; 
+  text-wrap: nowrap;
+}
+
+.gradient-btn:hover {
+  transform: scale(1.05);
+}
+
 
 .btn {
   display: inline-block;
@@ -100,7 +125,7 @@ section {
 }
 
 
-@media(max-width: 1000px) {
+@media(max-width: 1200px) {
   .home-container {
     flex-direction: column-reverse;
     margin: 5rem 0;
@@ -113,7 +138,6 @@ section {
   .home-img img {
     width: 56vw;
   }
-  
 }
 
 

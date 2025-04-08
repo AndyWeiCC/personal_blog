@@ -7,20 +7,26 @@
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
+  margin-top: 1rem;
   color: white;
+  padding: 0.5rem;
+  transition: all 0.2s ease;
 }
 
 .language-dropdown {
   position: absolute;
   top: 100%;
-  left: 0;
+  right: 0; /* Changed from left:0 to right:0 to align with icon */
   background-color: #fff;
   border: 1px solid #ddd;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   z-index: 1000;
-  width: 150px;
+  width: 150px; /* Increased from 50px for better content fit */
+  padding: 0.5rem 0;
+  transform-origin: top right;
+  animation: fadeIn 0.2s ease-out;
 }
 
 .language-option {
@@ -37,4 +43,11 @@
 
 .language-option .ui.flag {
   margin: 0;
+}
+
+
+@media (max-width: 1200px) {
+  .language-dropdown {
+    left: 0;
+  }
 }
