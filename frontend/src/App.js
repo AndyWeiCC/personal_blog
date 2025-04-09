@@ -7,8 +7,9 @@ import About from './pages/about/About';
 import Article from './pages/article/Article';
 import ArticleDetail from './pages/articledetail/ArticleDetail';
 import Contact from './pages/contact/Contact'
-import Project from './pages/project/Project';
+import Topic from './pages/topic/Topic';
 import CardInfo from './pages/cardInfo/CardInfo';
+import Project from './pages/project/Project';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route path ="/articles" element={<Article/>}/>
           <Route path ="/article/:id" element={<ArticleDetail/>}/>
           <Route path = "/contact" element={<Contact />} />
+          <Route path ="/topics" element={<Topic />}/>
           <Route path ="/projects" element={<Project />}/>
           <Route path="/card-info/:id" element={<CardInfo />} />
         </Routes>

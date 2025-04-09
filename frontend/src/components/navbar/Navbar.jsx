@@ -21,9 +21,10 @@ const Navbar = () => {
         </Trans>
       </a>
       <nav className="navbar">
-        <a href="/about">About</a>
-        <a href="/projects">Projects</a>
-        <a href="/articles">Articles</a>
+        <a href="/about">{t('navbarAbout')}</a>
+        <a href="/projects">{t('navbarProjects')}</a>
+        <a href="/topics">{t('navbarTopics')}</a>
+        <a href="/articles">{t('navbarArticles')}</a>
       </nav>
       <div className="menuIconContainer">
         <FontAwesomeIcon
@@ -33,9 +34,10 @@ const Navbar = () => {
         />
         {isDropdownOpen && (
           <div className="dropdownMenu">
-            <a href="/about">About</a>
-            <a href="/projects">Projects</a>
-            <a href="/articles">Articles</a>
+          <a href="/about">{t('navbarAbout')}</a>
+          <a href="/projects">{t('navbarProjects')}</a>
+          <a href="/topics">{t('navbarTopics')}</a>
+          <a href="/articles">{t('navbarArticles')}</a>
           </div>
         )}
       </div>

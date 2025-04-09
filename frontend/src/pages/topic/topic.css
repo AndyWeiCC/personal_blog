@@ -1,0 +1,120 @@
+/* project.css */
+
+.topic-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-image: linear-gradient(to top, grey, rgb(3, 29, 155));
+  height: 100vh;
+  color: white;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  width: 100%;
+  position: relative;
+  max-width: 1600px;
+}
+
+.carousel-button {
+  background-color: transparent;
+  border: none;
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: white;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.carousel-button.left {
+  font-size: 4rem;
+  color: black;
+  left: 0; /* adjust based on your layout */
+}
+
+.carousel-button.right {
+  font-size: 4rem;
+  color: black;
+  right: 0; /* adjust based on your layout */
+}
+
+.persons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* optional spacing between cards */
+  list-style: none;
+}
+
+.carousel-image {
+  height: 30vh;
+  width: 30vh;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-image:hover {
+  transform: scale(1.15);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.topic-container h1 {
+  margin-top: -20rem;
+  font-size: 9rem;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.topic-container p {
+  color: #dcdcdc;
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+@media (max-width: 1000px) {
+  .carousel-image {
+    height: 20vh;
+    width: 20vh;
+  }
+
+  .topic-container h1 {
+    margin-top: -40rem;
+    font-size: 7rem; /* Decreased font size for smaller screens */
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+
+  .topic-container p {
+    color: #dcdcdc;
+    margin-bottom: 10px;
+    font-size: 2rem; font-size: 1.5rem; /* Decreased font size for smaller screens */
+  }
+
+  .carousel-button {
+    font-size: 2rem; /* Decreased button size for smaller screens */
+  }
+  .carousel-button.left {
+    font-size: 4rem;
+    left: 30%; /* Adjusted for smaller screens */
+    top: 150%;
+  }
+  .carousel-button.right {
+    font-size: 4rem;
+    right: 30%; /* Adjusted for smaller screens */
+    top: 150%;
+  }
+}

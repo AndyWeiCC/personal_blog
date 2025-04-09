@@ -9,6 +9,17 @@
   background-image: linear-gradient(to top, grey, rgb(3, 29, 155));
 }
 
+.article h1 {
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 1px;
+  font-size: 8rem;
+  font-weight: bold;
+  margin-top: 1.5rem;
+  line-height: 1;
+  margin-left: 2rem;
+}
+
 .article-box {
   display: flex;
   align-items: stretch; /* Ensure all cards stretch to the same height */
@@ -93,3 +104,17 @@
   word-wrap: break-word; /* Break long words if needed */
 }
 
+
+@media (max-width: 1400px) {
+  .article {
+    flex-direction: column; /* Stack the article section vertically */
+    align-items: center; /* Center align the article section */
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+
+  .article h1 {
+    font-size: 5rem; /* Adjust font size for smaller screens */
+    margin-top: 10rem; /* Adjust margin for smaller screens */
+  }
+
+}

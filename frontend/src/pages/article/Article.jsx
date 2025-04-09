@@ -31,6 +31,7 @@ const Article = () => {
   return (
     <>
       <div className="article">
+        <h1>Articles</h1>
         <div className="article-box">
           {articles.map((article) => (
             <div 

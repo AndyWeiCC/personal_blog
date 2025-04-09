@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useLocation } from "react-router-dom";
 import "./cardInfo.css";
+import Footer from "../../components/footer/Footer";
 
 const CardInfo = () => {
   const { id } = useParams();
@@ -31,33 +32,41 @@ const CardInfo = () => {
 
 
   return (
-    <div className="card-info">
-      <h1>{topic.toUpperCase()}</h1>
-      <div className="video-container">
-        {error ? (
-          <p>Error: {error}</p>
-        ) : videos.length > 0 ? (
-          <div className="video-list">
-            {videos.map(video => (
-              <div key={video.id} className="video-item">
-                  <iframe
-                    width="560"
-                    height="315"
-                    src={`https://www.youtube.com/embed/${video.videoId}`}
-                    title={video.title}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                />
-                <h3>{video.title}</h3>
-                <p>{video.description}</p>
+    <>
+      <div className="card-info">
+        <h1>{topic?.toUpperCase()}</h1>
+        <div className="video-container">
+          {error ? (
+            <p>Error: {error}</p>
+          ) : videos.length > 0 ? (
+            <>
+              <div className="video-list">
+                {videos.map(video => (
+                  <>
+                    <div key={video.id} className="video-item">
+                      <iframe
+                        width="560"
+                        height="315"
+                        src={`https://www.youtube.com/embed/${video.videoId}`}
+                        title={video.title}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen />
+                    </div>
+                    <div className="video-details">
+                      <h3>{video.title}</h3>
+                      <p>{video.description}</p>
+                    </div>
+                  </>
+                ))}
               </div>
-            ))}
-          </div>
-        ) : (
-          <p>This part under maintenance :(</p>
-        )}
+            </>
+          ) : (
+            <p className="warning-message">This part under maintenance :(</p>
+          )}
+        </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 

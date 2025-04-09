@@ -2,10 +2,11 @@
   color: white;
   text-align: center;
   margin-top: 120px;
-  font-size: 2.5rem; /* Increased font size */
+  font-size: 3.5rem; /* Increased font size */
 }
 
 .video-list {
+  width: 100%;
   display: flex;
   align-items: stretch; /* Ensure all cards stretch to the same height */
   justify-content: center;
@@ -17,30 +18,85 @@
 }
 
 .video-item {
-  max-width: 583px;
-  border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-  border: 2px solid white;
-  padding: 1rem;
+  width: 60%;
+  box-sizing: border-box; /* what's this ????????*/
+  flex: 1 1 calc(50% - 2rem); /* what's this ????????*/
+  padding: 2rem;
+  max-width: calc(50% - 2rem);  /* what's this ????????*/
   transition: transform 0.2s ease;
   color: rgb(26, 22, 22);
   overflow: hidden; /* Prevent content overflow */
 }
 
+.video-item iframe {
+  width: 70%;
+  margin-left: 13rem;
+  height: 300px;
+  border-radius: 22px;
+  box-shadow: 0 0 25px var(--main-color);
+}
+
 .video-item:hover {
   transform: translateY(-4px);
 }
-.video-item h3 {
-  color: white;
-  font-size: 2.5rem;
-  text-align: left;
+
+.video-details {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding-right: 13rem;
 }
 
-.video-item p {
-  max-width: 80%;
+.video-details h3 {
+  color: white;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.video-details p {
+  color: white;
   font-size: 1.8rem;
-  text-align: left;
+  text-align: center;
+}
+
+.warning-message {
+  max-width: 100%;
+  font-size: 1.8rem;
+  text-align: center;
   white-space: normal; /* Allow text wrapping */
   overflow-wrap: break-word; /* Break long words if needed */
   color: grey;
+}
+
+@media (max-width: 1000px) {
+  .video-item {
+    margin-left: 0rem;
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .video-item iframe {
+    width: 100%;
+    margin-left: 0rem;
+    height: 300px;
+    border-radius: 22px;
+    box-shadow: 0 0 25px var(--main-color);
+  }
+
+  .video-details {
+    padding-right: 0;
+    width: 100%;
+  }
+
+  .video-details h3 {
+    font-size: 2rem;
+  }
+  .video-details p {
+    font-size: 1.5rem;
+  }
+
+
 }

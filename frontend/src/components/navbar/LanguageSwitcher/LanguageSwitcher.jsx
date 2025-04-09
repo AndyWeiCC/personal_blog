@@ -33,8 +33,12 @@ const LanguageSwitcher = () => {
             <Flag name='au' />
             {t('language_switcher.en')}
           </div>
-          <div onClick={() => changeLanguage('zh')} className="language-option">
+          <div onClick={() => changeLanguage('tw')} className="language-option">
             <Flag name='tw' />
+            {t('language_switcher.tw')}
+          </div>
+          <div onClick={() => changeLanguage('zh')} className="language-option">
+            <Flag name='cn' />
             {t('language_switcher.zh')}
           </div>
           <div onClick={() => changeLanguage('ja')} className="language-option">
